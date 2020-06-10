@@ -11,6 +11,10 @@
   <title>Frontend Mentor | Social Media Dashboard</title>
   <link rel="stylesheet" href="./dist/styles.css">
 
+  <style>
+    .attribution { font-size: 11px; text-align: center; margin-bottom: 0.5rem;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
 </head>
 
 <body>
@@ -39,7 +43,7 @@
           <p><strong>1987</strong></p>
           <p class="card-numbers-">Followers</p>     
         </div>
-        <div class="card-stats">
+        <div class="card-diff diff">
           <img src="images/icon-up.svg" alt="up chevron icon">
           <p>12 Today</p>
         </div>
@@ -53,7 +57,7 @@
           <p><strong>1044</strong></p>
           <p class="card-numbers-">Followers</p>     
         </div>
-        <div class="card-stats">
+        <div class="card-diff diff">
           <img src="images/icon-up.svg" alt="up chevron icon">
           <p>99 Today</p>
         </div>
@@ -67,7 +71,7 @@
           <p><strong>11k</strong></p>
           <p class="card-numbers-">Followers</p>     
         </div>
-        <div class="card-stats">
+        <div class="card-diff diff">
           <img src="images/icon-up.svg" alt="up chevron icon">
           <p>1099 Today</p>
         </div>
@@ -81,65 +85,96 @@
           <p><strong>8239</strong></p>
           <p class="card-numbers-">Subscribers</p>     
         </div>
-        <div class="card-stats">
+        <div class="card-diff diff">
           <img src="images/icon-down.svg" alt="up chevron icon">
           <p>144 Today</p>
         </div>
       </div>
     </section>
-    <section class="overview">
+    <section id="overview">
       <h3>Overview - Today</h3>
       <div class="statistics">
         <div class="stat">
           <h4 class="stat-title">Page Views</h4>
           <img class="stat-icon" src="images/icon-facebook.svg" alt="facebook logo">
           <p class="stat-number"><strong>87</strong></p>
-          <p class="stat-diff"><span><img src="images/icon-up.svg" alt="up chevron icon"></span>3%</p>
+          <div class="stat-diff diff">
+            <img src="images/icon-up.svg" alt="up chevron icon">
+            <p>3%</p>
+          </div>
+        </div>
+        <div class="stat">
+          <h4 class="stat-title">Likes</h4>
+          <img class="stat-icon" src="images/icon-facebook.svg" alt="facebook logo">
+          <p class="stat-number"><strong>52</strong></p>
+          <div class="stat-diff diff">
+            <img src="images/icon-down.svg" alt="down chevron icon">
+            <p>2%</p>
+          </div>
+        </div>
+        <div class="stat">
+          <h4 class="stat-title">Likes</h4>
+          <img class="stat-icon" src="images/icon-instagram.svg" alt="facebook logo">
+          <p class="stat-number"><strong>5462</strong></p>
+          <div class="stat-diff diff">
+            <img src="images/icon-up.svg" alt="up chevron icon">
+            <p>2257%</p>
+          </div>
+        </div>
+        <div class="stat">
+          <h4 class="stat-title">Profile Views</h4>
+          <img class="stat-icon" src="images/icon-instagram.svg" alt="facebook logo">
+          <p class="stat-number"><strong>52k</strong></p>
+          <div class="stat-diff diff">
+            <img src="images/icon-up.svg" alt="up chevron icon">
+            <p>1375%</p>
+          </div>
+        </div>
+        <div class="stat">
+          <h4 class="stat-title">Retweets</h4>
+          <img class="stat-icon" src="images/icon-twitter.svg" alt="facebook logo">
+          <p class="stat-number"><strong>117</strong></p>
+          <div class="stat-diff diff">
+            <img src="images/icon-up.svg" alt="up chevron icon">
+            <p>303%</p>
+          </div>
+        </div>
+        <div class="stat">
+          <h4 class="stat-title">Likes</h4>
+          <img class="stat-icon" src="images/icon-twitter.svg" alt="facebook logo">
+          <p class="stat-number"><strong>507</strong></p>
+          <div class="stat-diff diff">
+            <img src="images/icon-up.svg" alt="up chevron icon">
+            <p>553%</p>
+          </div>
+        </div>
+        <div class="stat">
+          <h4 class="stat-title">Likes</h4>
+          <img class="stat-icon" src="images/icon-youtube.svg" alt="facebook logo">
+          <p class="stat-number"><strong>107</strong></p>
+          <div class="stat-diff diff">
+            <img src="images/icon-down.svg" alt="down chevron icon">
+            <p>19%</p>
+          </div>
+        </div>
+        <div class="stat">
+          <h4 class="stat-title">Total Views</h4>
+          <img class="stat-icon" src="images/icon-youtube.svg" alt="facebook logo">
+          <p class="stat-number"><strong>1407</strong></p>
+          <div class="stat-diff diff">
+            <img src="images/icon-down.svg" alt="down chevron icon">
+            <p>12%</p>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!--
-
-  Overview - Today
-
-  Page Views
-  87
-  3%
-
-  Likes
-  52
-  2%
-
-  Likes
-  5462
-  2257%
-
-  Profile Views
-  52k
-  1375%
-
-  Retweets
-  117
-  303%
-
-  Likes
-  507
-  553%
-
-  Likes
-  107
-  19%
-
-  Total Views
-  1407
-  12% -->
-
   <div class="attribution">
+    Coded with ❤ by <a href="https://github.com/rtmonteiro/">Ryan Monteiro</a>.
+    <br>
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://github.com/rtmonteiro/">Ryan Monteiro</a>.
   </div>
 </body>
 
