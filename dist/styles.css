@@ -45,8 +45,6 @@
   right: 0;
   bottom: 0;
   background: #aeb3cb;
-  -webkit-transition: all .4s;
-  transition: all .4s;
 }
 
 .slider::before {
@@ -154,6 +152,13 @@ main section#overview .statistics {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
+  -webkit-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
+}
+
+.card:hover {
+  background-color: #d2d6e5;
 }
 
 .card-social {
@@ -254,6 +259,13 @@ main section#overview .statistics {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
+  -webkit-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
+}
+
+.stat:hover {
+  background-color: #d2d6e5;
 }
 
 .stat-title {
