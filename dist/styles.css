@@ -74,11 +74,27 @@ body {
   color: #1e202a;
 }
 
-header {
+.container {
   width: 100%;
-  margin: 0.5rem 0;
-  padding: 1.5rem;
+  margin: auto;
   background-color: #f5f7ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header {
+  width: 95%;
+  max-width: 1200px;
+  margin: auto 0;
+  padding: 1.5rem 0 10rem;
 }
 
 header hgroup {
@@ -88,20 +104,21 @@ header hgroup {
 
 header hgroup h1 {
   color: #1e202a;
-  font-size: 1.5rem;
+  font-weight: 700;
+  font-size: 1.8rem;
 }
 
 header hgroup h2 {
   margin-top: 0.25rem;
-  font-weight: 700;
   color: #63687e;
+  font-weight: 700;
   font-size: 0.9rem;
 }
 
 header .theme-switch {
   margin: 1rem 0;
-  font-weight: 700;
   color: #63687e;
+  font-weight: 700;
   font-size: 0.9rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -114,15 +131,32 @@ header .theme-switch {
           align-items: center;
 }
 
+main {
+  margin-top: -7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 main section {
-  padding: 0 1.5rem;
+  width: 95%;
+  max-width: 1200px;
   margin-bottom: 2.5rem;
 }
 
 main section#dashboard {
   display: -ms-grid;
   display: grid;
-  gap: 1.5rem 1rem;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
 main section#overview h3 {
@@ -134,7 +168,9 @@ main section#overview h3 {
 main section#overview .statistics {
   display: -ms-grid;
   display: grid;
-  gap: 1.5rem 1rem;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem 1.75rem;
 }
 
 .card {
@@ -329,5 +365,37 @@ main section#overview .statistics {
 .diff p {
   font-weight: 700;
   font-size: 0.75rem;
+}
+
+@media screen and (min-width: 900px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header hgroup {
+    border-bottom: none;
+  }
+  header .theme-switch {
+    margin: 1rem 0;
+    font-weight: 700;
+    color: #63687e;
+    font-size: 0.9rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .theme-switch p {
+    margin-right: 1rem;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
