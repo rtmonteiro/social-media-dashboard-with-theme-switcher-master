@@ -70,14 +70,14 @@
 body {
   width: 100vw;
   font-family: 'Inter', sans-serif;
-  background-color: white;
-  color: #1e202a;
+  background-color: #1e202a;
+  color: white;
 }
 
 .container {
   width: 100%;
   margin: auto;
-  background-color: #f5f7ff;
+  background-color: #1f212e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,21 +103,21 @@ header hgroup {
 }
 
 header hgroup h1 {
-  color: #1e202a;
+  color: white;
   font-weight: 700;
   font-size: 1.8rem;
 }
 
 header hgroup h2 {
   margin-top: 0.25rem;
-  color: #63687e;
+  color: #8b97c6;
   font-weight: 700;
   font-size: 0.9rem;
 }
 
 header .theme-switch {
   margin: 1rem 0;
-  color: #63687e;
+  color: #8b97c6;
   font-weight: 700;
   font-size: 0.9rem;
   display: -webkit-box;
@@ -160,7 +160,7 @@ main section#dashboard {
 }
 
 main section#overview h3 {
-  color: #63687e;
+  color: #8b97c6;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -177,7 +177,7 @@ main section#overview .statistics {
   width: 100%;
   padding: 2rem 0;
   border-radius: 5px;
-  background-color: #f0f2fa;
+  background-color: #252a41;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -194,7 +194,7 @@ main section#overview .statistics {
 }
 
 .card:hover {
-  background-color: #d2d6e5;
+  background-color: #495583;
 }
 
 .card-social {
@@ -212,7 +212,7 @@ main section#overview .statistics {
 }
 
 .card-social p {
-  color: #63687e;
+  color: #8b97c6;
   font-weight: 700;
   font-size: 0.8rem;
 }
@@ -232,7 +232,7 @@ main section#overview .statistics {
 }
 
 .card-numbers p {
-  color: #63687e;
+  color: #8b97c6;
   font-weight: 400;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -240,7 +240,7 @@ main section#overview .statistics {
 }
 
 .card-numbers p strong {
-  color: #1e202a;
+  color: white;
   font-weight: 700;
   font-size: 3.5rem;
   text-transform: none;
@@ -287,7 +287,7 @@ main section#overview .statistics {
 .stat {
   padding: 1.5rem 1.75rem;
   border-radius: 5px;
-  background-color: #f0f2fa;
+  background-color: #252a41;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "title icon" "number diff";
@@ -301,11 +301,11 @@ main section#overview .statistics {
 }
 
 .stat:hover {
-  background-color: #d2d6e5;
+  background-color: #495583;
 }
 
 .stat-title {
-  color: #63687e;
+  color: #8b97c6;
   font-size: 0.9rem;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -382,7 +382,7 @@ main section#overview .statistics {
   header .theme-switch {
     margin: 1rem 0;
     font-weight: 700;
-    color: #63687e;
+    color: #8b97c6;
     font-size: 0.9rem;
     display: -webkit-box;
     display: -ms-flexbox;
