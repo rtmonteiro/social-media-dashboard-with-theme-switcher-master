@@ -3,10 +3,12 @@
 /* COLORS */
 /* primary colors */
 /* neutral */
-/* dark-theme */
 /* light-theme */
+/* dark-theme */
 /* FONT */
 /* font weights */
+/* ANIMATION */
+/* Ease-in-out */
 * {
   margin: 0;
   padding: 0;
@@ -54,13 +56,13 @@
   width: 16px;
   left: 3px;
   bottom: 3px;
-  background: white;
+  background: #1f212e;
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 .slider.round {
-  border-radius: 34px;
+  border-radius: 16px;
 }
 
 .slider.round::before {
@@ -68,7 +70,6 @@
 }
 
 body {
-  width: 100vw;
   font-family: 'Inter', sans-serif;
   background-color: #1e202a;
   color: white;
@@ -129,6 +130,25 @@ header .theme-switch {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+header .theme-switch:hover p {
+  color: white;
+}
+
+header .theme-switch:hover .slider::before {
+  background: #374062;
+}
+
+header .theme-switch p {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  margin-right: 1rem;
+}
+
+header .theme-switch .slider::before {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 main {
@@ -194,7 +214,7 @@ main section#overview .statistics {
 }
 
 .card:hover {
-  background-color: #495583;
+  background-color: #374062;
 }
 
 .card-social {
@@ -301,7 +321,7 @@ main section#overview .statistics {
 }
 
 .stat:hover {
-  background-color: #495583;
+  background-color: #374062;
 }
 
 .stat-title {
@@ -378,24 +398,6 @@ main section#overview .statistics {
   }
   header hgroup {
     border-bottom: none;
-  }
-  header .theme-switch {
-    margin: 1rem 0;
-    font-weight: 700;
-    color: #8b97c6;
-    font-size: 0.9rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header .theme-switch p {
-    margin-right: 1rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */
