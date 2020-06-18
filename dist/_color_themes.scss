@@ -1,0 +1,38 @@
+$themes: (
+  light: (
+    bg-primary: $background-primary--light,
+    bg-secondary: $background-secondary--light,
+    card-bg: $card-background--light,
+    text: $text-primary--light,
+    text-secondary: $text-secondary--light,
+    hover: $hover-color--light
+  ),
+  dark: (
+    bg-primary: $background-primary--dark,
+    bg-secondary: $background-secondary--dark,
+    card-bg: $card-background--dark,
+    text: $text-primary--dark,
+    text-secondary: $text-secondary--dark,
+    hover: $hover-color--dark
+  ),
+);
+
+// Implementation of themes
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
