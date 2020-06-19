@@ -56,9 +56,16 @@
   width: 18px;
   left: 3px;
   bottom: 3px;
-  background: #1f212e;
   -webkit-transition: .4s;
   transition: .4s;
+}
+
+.theme-light .slider::before {
+  background: #f5f7ff;
+}
+
+.theme-dark .slider::before {
+  background: #1f212e;
 }
 
 .slider.round {
@@ -71,14 +78,21 @@
 
 body {
   font-family: 'Inter', sans-serif;
+}
+
+body.theme-dark {
   background-color: #1e202a;
   color: white;
+}
+
+body.theme-light {
+  background-color: white;
+  color: #1e202a;
 }
 
 .container {
   width: 100%;
   margin: auto;
-  background-color: #1f212e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,6 +103,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.theme-light .container {
+  background-color: #f5f7ff;
+}
+
+.theme-dark .container {
+  background-color: #1f212e;
 }
 
 header {
@@ -104,21 +126,34 @@ header hgroup {
 }
 
 header hgroup h1 {
-  color: white;
   font-weight: 700;
   font-size: 1.8rem;
 }
 
+.theme-light header hgroup h1 {
+  color: #1e202a;
+}
+
+.theme-dark header hgroup h1 {
+  color: white;
+}
+
 header hgroup h2 {
   margin-top: 0.25rem;
-  color: #8b97c6;
   font-weight: 700;
   font-size: 0.9rem;
 }
 
-header .theme-switch {
-  margin: 1rem 0;
+.theme-light header hgroup h2 {
+  color: #63687e;
+}
+
+.theme-dark header hgroup h2 {
   color: #8b97c6;
+}
+
+header #theme-switch {
+  margin: 1rem 0;
   font-weight: 700;
   font-size: 0.9rem;
   display: -webkit-box;
@@ -132,21 +167,37 @@ header .theme-switch {
           align-items: center;
 }
 
-header .theme-switch:hover p {
+.theme-light header #theme-switch {
+  color: #63687e;
+}
+
+.theme-dark header #theme-switch {
+  color: #8b97c6;
+}
+
+.theme-light header #theme-switch:hover p {
+  color: #1e202a;
+}
+
+.theme-dark header #theme-switch:hover p {
   color: white;
 }
 
-header .theme-switch:hover .slider::before {
+.theme-light header #theme-switch:hover .slider::before {
+  background: #d2d6e5;
+}
+
+.theme-dark header #theme-switch:hover .slider::before {
   background: #374062;
 }
 
-header .theme-switch p {
+header #theme-switch p {
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   margin-right: 1rem;
 }
 
-header .theme-switch .slider::before {
+header #theme-switch .slider::before {
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
@@ -180,9 +231,16 @@ main section#dashboard {
 }
 
 main section#overview h3 {
-  color: #8b97c6;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+.theme-light main section#overview h3 {
+  color: #63687e;
+}
+
+.theme-dark main section#overview h3 {
+  color: #8b97c6;
 }
 
 main section#overview .statistics {
@@ -197,7 +255,6 @@ main section#overview .statistics {
   width: 100%;
   padding: 2rem 0;
   border-radius: 5px;
-  background-color: #252a41;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -213,7 +270,19 @@ main section#overview .statistics {
   transition: background-color 200ms ease-in-out;
 }
 
-.card:hover {
+.theme-light .card {
+  background-color: #f0f2fa;
+}
+
+.theme-dark .card {
+  background-color: #252a41;
+}
+
+.theme-light .card:hover {
+  background-color: #d2d6e5;
+}
+
+.theme-dark .card:hover {
   background-color: #374062;
 }
 
@@ -232,9 +301,16 @@ main section#overview .statistics {
 }
 
 .card-social p {
-  color: #8b97c6;
   font-weight: 700;
   font-size: 0.8rem;
+}
+
+.theme-light .card-social p {
+  color: #63687e;
+}
+
+.theme-dark .card-social p {
+  color: #8b97c6;
 }
 
 .card-numbers {
@@ -252,19 +328,33 @@ main section#overview .statistics {
 }
 
 .card-numbers p {
-  color: #8b97c6;
   font-weight: 400;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
 }
 
+.theme-light .card-numbers p {
+  color: #63687e;
+}
+
+.theme-dark .card-numbers p {
+  color: #8b97c6;
+}
+
 .card-numbers p strong {
-  color: white;
   font-weight: 700;
   font-size: 3.5rem;
   text-transform: none;
   letter-spacing: normal;
+}
+
+.theme-light .card-numbers p strong {
+  color: #1e202a;
+}
+
+.theme-dark .card-numbers p strong {
+  color: white;
 }
 
 .card-diff {
@@ -307,7 +397,6 @@ main section#overview .statistics {
 .stat {
   padding: 1.5rem 1.75rem;
   border-radius: 5px;
-  background-color: #252a41;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "title icon" "number diff";
@@ -320,18 +409,37 @@ main section#overview .statistics {
   transition: background-color 200ms ease-in-out;
 }
 
-.stat:hover {
+.theme-light .stat {
+  background-color: #f0f2fa;
+}
+
+.theme-dark .stat {
+  background-color: #252a41;
+}
+
+.theme-light .stat:hover {
+  background-color: #d2d6e5;
+}
+
+.theme-dark .stat:hover {
   background-color: #374062;
 }
 
 .stat-title {
-  color: #8b97c6;
   font-size: 0.9rem;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: title;
   -ms-grid-column-align: left;
       justify-self: left;
+}
+
+.theme-light .stat-title {
+  color: #63687e;
+}
+
+.theme-dark .stat-title {
+  color: #8b97c6;
 }
 
 .stat-icon {

@@ -12,171 +12,191 @@
   <link rel="stylesheet" href="./dist/styles.css">
 
   <style>
-    .attribution { font-size: 11px; text-align: center; margin-bottom: 0.5rem;}
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
 
-<body>
-  <div class="container">
-    <header>
-      <hgroup>
-        <h1>Social Media Dashboard</h1>
-        <h2>Total Followers: 23,004</h2>
-      </hgroup>
-      <div class="theme-switch">
-        <p>Dark Mode</p>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </header>
-  </div>
-  <main>
-    <section id="dashboard">
-      <div class="card facebook">
-        <div class="card-social">
-          <img src="images/icon-facebook.svg" alt="facebook logo">
-          <p>@nathanf</p>
+<body class="theme-light">
+    <div class="container">
+      <header>
+        <hgroup>
+          <h1>Social Media Dashboard</h1>
+          <h2>Total Followers: 23,004</h2>
+        </hgroup>
+        <div id="theme-switch">
+          <p>Dark Mode</p>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
         </div>
-        <div class="card-numbers">
-          <p><strong>1987</strong></p>
-          <p class="card-numbers-">Followers</p>     
-        </div>
-        <div class="card-diff diff">
-          <img src="images/icon-up.svg" alt="up chevron icon">
-          <p>12 Today</p>
-        </div>
-      </div>
-      <div class="card twitter">
-        <div class="card-social">
-          <img src="images/icon-twitter.svg" alt="facebook logo">
-          <p>@nathanf</p>
-        </div>
-        <div class="card-numbers">
-          <p><strong>1044</strong></p>
-          <p class="card-numbers-">Followers</p>     
-        </div>
-        <div class="card-diff diff">
-          <img src="images/icon-up.svg" alt="up chevron icon">
-          <p>99 Today</p>
-        </div>
-      </div>
-      <div class="card instagram">
-        <div class="card-social">
-          <img src="images/icon-instagram.svg" alt="facebook logo">
-          <p>@realnathanf</p>
-        </div>
-        <div class="card-numbers">
-          <p><strong>11k</strong></p>
-          <p class="card-numbers-">Followers</p>     
-        </div>
-        <div class="card-diff diff">
-          <img src="images/icon-up.svg" alt="up chevron icon">
-          <p>1099 Today</p>
-        </div>
-      </div>
-      <div class="card youtube">
-        <div class="card-social">
-          <img src="images/icon-youtube.svg" alt="facebook logo">
-          <p>Nathan F.</p>
-        </div>
-        <div class="card-numbers">
-          <p><strong>8239</strong></p>
-          <p class="card-numbers-">Subscribers</p>     
-        </div>
-        <div class="card-diff diff">
-          <img src="images/icon-down.svg" alt="up chevron icon">
-          <p>144 Today</p>
-        </div>
-      </div>
-    </section>
-    <section id="overview">
-      <h3>Overview - Today</h3>
-      <div class="statistics">
-        <div class="stat">
-          <h4 class="stat-title">Page Views</h4>
-          <img class="stat-icon" src="images/icon-facebook.svg" alt="facebook logo">
-          <p class="stat-number"><strong>87</strong></p>
-          <div class="stat-diff diff">
+      </header>
+    </div>
+    <main>
+      <section id="dashboard">
+        <div class="card facebook">
+          <div class="card-social">
+            <img src="images/icon-facebook.svg" alt="facebook logo">
+            <p>@nathanf</p>
+          </div>
+          <div class="card-numbers">
+            <p><strong>1987</strong></p>
+            <p class="card-numbers-">Followers</p>
+          </div>
+          <div class="card-diff diff">
             <img src="images/icon-up.svg" alt="up chevron icon">
-            <p>3%</p>
+            <p>12 Today</p>
           </div>
         </div>
-        <div class="stat">
-          <h4 class="stat-title">Likes</h4>
-          <img class="stat-icon" src="images/icon-facebook.svg" alt="facebook logo">
-          <p class="stat-number"><strong>52</strong></p>
-          <div class="stat-diff diff">
-            <img src="images/icon-down.svg" alt="down chevron icon">
-            <p>2%</p>
+        <div class="card twitter">
+          <div class="card-social">
+            <img src="images/icon-twitter.svg" alt="facebook logo">
+            <p>@nathanf</p>
           </div>
-        </div>
-        <div class="stat">
-          <h4 class="stat-title">Likes</h4>
-          <img class="stat-icon" src="images/icon-instagram.svg" alt="facebook logo">
-          <p class="stat-number"><strong>5462</strong></p>
-          <div class="stat-diff diff">
+          <div class="card-numbers">
+            <p><strong>1044</strong></p>
+            <p class="card-numbers-">Followers</p>
+          </div>
+          <div class="card-diff diff">
             <img src="images/icon-up.svg" alt="up chevron icon">
-            <p>2257%</p>
+            <p>99 Today</p>
           </div>
         </div>
-        <div class="stat">
-          <h4 class="stat-title">Profile Views</h4>
-          <img class="stat-icon" src="images/icon-instagram.svg" alt="facebook logo">
-          <p class="stat-number"><strong>52k</strong></p>
-          <div class="stat-diff diff">
+        <div class="card instagram">
+          <div class="card-social">
+            <img src="images/icon-instagram.svg" alt="facebook logo">
+            <p>@realnathanf</p>
+          </div>
+          <div class="card-numbers">
+            <p><strong>11k</strong></p>
+            <p class="card-numbers-">Followers</p>
+          </div>
+          <div class="card-diff diff">
             <img src="images/icon-up.svg" alt="up chevron icon">
-            <p>1375%</p>
+            <p>1099 Today</p>
           </div>
         </div>
-        <div class="stat">
-          <h4 class="stat-title">Retweets</h4>
-          <img class="stat-icon" src="images/icon-twitter.svg" alt="facebook logo">
-          <p class="stat-number"><strong>117</strong></p>
-          <div class="stat-diff diff">
-            <img src="images/icon-up.svg" alt="up chevron icon">
-            <p>303%</p>
+        <div class="card youtube">
+          <div class="card-social">
+            <img src="images/icon-youtube.svg" alt="facebook logo">
+            <p>Nathan F.</p>
+          </div>
+          <div class="card-numbers">
+            <p><strong>8239</strong></p>
+            <p class="card-numbers-">Subscribers</p>
+          </div>
+          <div class="card-diff diff">
+            <img src="images/icon-down.svg" alt="up chevron icon">
+            <p>144 Today</p>
           </div>
         </div>
-        <div class="stat">
-          <h4 class="stat-title">Likes</h4>
-          <img class="stat-icon" src="images/icon-twitter.svg" alt="facebook logo">
-          <p class="stat-number"><strong>507</strong></p>
-          <div class="stat-diff diff">
-            <img src="images/icon-up.svg" alt="up chevron icon">
-            <p>553%</p>
+      </section>
+      <section id="overview">
+        <h3>Overview - Today</h3>
+        <div class="statistics">
+          <div class="stat">
+            <h4 class="stat-title">Page Views</h4>
+            <img class="stat-icon" src="images/icon-facebook.svg" alt="facebook logo">
+            <p class="stat-number"><strong>87</strong></p>
+            <div class="stat-diff diff">
+              <img src="images/icon-up.svg" alt="up chevron icon">
+              <p>3%</p>
+            </div>
+          </div>
+          <div class="stat">
+            <h4 class="stat-title">Likes</h4>
+            <img class="stat-icon" src="images/icon-facebook.svg" alt="facebook logo">
+            <p class="stat-number"><strong>52</strong></p>
+            <div class="stat-diff diff">
+              <img src="images/icon-down.svg" alt="down chevron icon">
+              <p>2%</p>
+            </div>
+          </div>
+          <div class="stat">
+            <h4 class="stat-title">Likes</h4>
+            <img class="stat-icon" src="images/icon-instagram.svg" alt="facebook logo">
+            <p class="stat-number"><strong>5462</strong></p>
+            <div class="stat-diff diff">
+              <img src="images/icon-up.svg" alt="up chevron icon">
+              <p>2257%</p>
+            </div>
+          </div>
+          <div class="stat">
+            <h4 class="stat-title">Profile Views</h4>
+            <img class="stat-icon" src="images/icon-instagram.svg" alt="facebook logo">
+            <p class="stat-number"><strong>52k</strong></p>
+            <div class="stat-diff diff">
+              <img src="images/icon-up.svg" alt="up chevron icon">
+              <p>1375%</p>
+            </div>
+          </div>
+          <div class="stat">
+            <h4 class="stat-title">Retweets</h4>
+            <img class="stat-icon" src="images/icon-twitter.svg" alt="facebook logo">
+            <p class="stat-number"><strong>117</strong></p>
+            <div class="stat-diff diff">
+              <img src="images/icon-up.svg" alt="up chevron icon">
+              <p>303%</p>
+            </div>
+          </div>
+          <div class="stat">
+            <h4 class="stat-title">Likes</h4>
+            <img class="stat-icon" src="images/icon-twitter.svg" alt="facebook logo">
+            <p class="stat-number"><strong>507</strong></p>
+            <div class="stat-diff diff">
+              <img src="images/icon-up.svg" alt="up chevron icon">
+              <p>553%</p>
+            </div>
+          </div>
+          <div class="stat">
+            <h4 class="stat-title">Likes</h4>
+            <img class="stat-icon" src="images/icon-youtube.svg" alt="facebook logo">
+            <p class="stat-number"><strong>107</strong></p>
+            <div class="stat-diff diff">
+              <img src="images/icon-down.svg" alt="down chevron icon">
+              <p>19%</p>
+            </div>
+          </div>
+          <div class="stat">
+            <h4 class="stat-title">Total Views</h4>
+            <img class="stat-icon" src="images/icon-youtube.svg" alt="facebook logo">
+            <p class="stat-number"><strong>1407</strong></p>
+            <div class="stat-diff diff">
+              <img src="images/icon-down.svg" alt="down chevron icon">
+              <p>12%</p>
+            </div>
           </div>
         </div>
-        <div class="stat">
-          <h4 class="stat-title">Likes</h4>
-          <img class="stat-icon" src="images/icon-youtube.svg" alt="facebook logo">
-          <p class="stat-number"><strong>107</strong></p>
-          <div class="stat-diff diff">
-            <img src="images/icon-down.svg" alt="down chevron icon">
-            <p>19%</p>
-          </div>
-        </div>
-        <div class="stat">
-          <h4 class="stat-title">Total Views</h4>
-          <img class="stat-icon" src="images/icon-youtube.svg" alt="facebook logo">
-          <p class="stat-number"><strong>1407</strong></p>
-          <div class="stat-diff diff">
-            <img src="images/icon-down.svg" alt="down chevron icon">
-            <p>12%</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-  </main>
+    </main>
 
-  <div class="attribution">
-    Coded with ❤ by <a href="https://github.com/rtmonteiro/">Ryan Monteiro</a>.
-    <br>
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-  </div>
+    <div class="attribution">
+      Coded with ❤ by <a href="https://github.com/rtmonteiro/">Ryan Monteiro</a>.
+      <br>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    </div>
+    <script>
+      const body = document.querySelector('body');
+      const themeButton = document.querySelector('input');
+      themeButton.addEventListener('input', (e) => {
+        if(e.target.checked) {
+          body.classList.remove('theme-light');
+          body.classList.add('theme-dark');
+        } else {
+          body.classList.remove('theme-dark');
+          body.classList.add('theme-light');
+        }
+      })
+    </script>
 </body>
 
 </html>

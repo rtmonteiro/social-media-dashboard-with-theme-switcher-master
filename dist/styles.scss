@@ -19,10 +19,6 @@ $youtube: hsl(348, 97%, 39%);
 $toggle-color-on: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 $toggle-color-off: hsl(230, 22%, 74%);
 
-
-// Theme definitions
-@use 'color_themes';
-
 /* neutral */
 /* light-theme */
 $background-primary--light: hsl(0, 0%, 100%);
@@ -38,6 +34,46 @@ $card-background--dark: hsl(228, 28%, 20%);
 $text-primary--dark: hsl(0, 0%, 100%);
 $text-secondary--dark: hsl(228, 34%, 66%);
 $hover-color--dark: hsl(228, 28%, 30%);
+
+// Theme definitions
+$themes: (light: (bg-primary: $background-primary--light,
+    bg-secondary: $background-secondary--light,
+    card-bg: $card-background--light,
+    text-primary: $text-primary--light,
+    text-secondary: $text-secondary--light,
+    hover: $hover-color--light),
+  dark: (bg-primary: $background-primary--dark,
+    bg-secondary: $background-secondary--dark,
+    card-bg: $card-background--dark,
+    text-primary: $text-primary--dark,
+    text-secondary: $text-secondary--dark,
+    hover: $hover-color--dark),
+);
+
+// Implementation of themes
+@mixin themify($themes) {
+
+  @each $theme,
+  $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+
+      @each $key,
+      $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
 
 /* FONT */
 /* font weights */
@@ -65,12 +101,15 @@ $toggle-constant: 5px;
   display: inline-block;
   width: calc(2 * #{$toggle-size} + 2 * #{$toggle-margin} + #{$toggle-constant});
   height: calc(#{$toggle-size} + 2 * #{$toggle-margin});
+
   input {
     opacity: 0;
     width: 0;
     height: 0;
+
     &:checked + .slider {
       background: $toggle-color-on;
+
       &::before {
         transform: translateX(calc(#{$toggle-size} + #{$toggle-constant}));
       }
@@ -86,6 +125,7 @@ $toggle-constant: 5px;
   right: 0;
   bottom: 0;
   background: $toggle-color-off;
+
   &::before {
     position: absolute;
     content: "";
@@ -93,11 +133,15 @@ $toggle-constant: 5px;
     width: $toggle-size;
     left: $toggle-margin;
     bottom: $toggle-margin;
-    background: $background-secondary--dark;
+    @include themify($themes) {
+      background: themed('bg-secondary');
+    }
     transition: .4s;
   }
+
   &.round /* Rounded sliders */ {
     border-radius: $toggle-size;
+
     &::before {
       border-radius: 50%;
     }
@@ -105,19 +149,26 @@ $toggle-constant: 5px;
 }
 
 body {
-  // width: 100vw;
   font-family: 'Inter', sans-serif;
-  background-color: $background-primary--dark;
-  color: $text-primary--dark;
+  &.theme-dark {
+    background-color: $background-primary--dark;
+    color: $text-primary--dark;
+  }
+  &.theme-light {
+    background-color: $background-primary--light;
+    color: $text-primary--light;
+  }
 }
 
 .container {
   width: 100%;
   margin: auto;
-  background-color: $background-secondary--dark;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include themify($themes) {
+    background-color: themed('bg-secondary');
+  }
 }
 
 header {
@@ -125,38 +176,58 @@ header {
   max-width: 1200px;
   margin: auto 0;
   padding: 1.5rem 0 10rem;
+  
   hgroup {
     padding-bottom: 1.5rem;
     border-bottom: 1px solid hsl(228, 12%, 44%);
+
     h1 {
-      color: $text-primary--dark;
       font-weight: $bold-fontWeight;
       font-size: 1.8rem;
+      @include themify($themes) {
+        color: themed('text-primary');
+      }
     }
+
     h2 {
       margin-top: 0.25rem;
-      color: $text-secondary--dark;
       font-weight: $bold-fontWeight;
       font-size: 0.9rem;
+      @include themify($themes) {
+        color: themed('text-secondary');
+      }
     }
   }
-  
-  .theme-switch {
+
+  #theme-switch {
     margin: 1rem 0;
-    color: $text-secondary--dark;
     font-weight: $bold-fontWeight;
     font-size: 0.9rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &:hover {
-      p {color: $text-primary--dark;}
-      .slider::before {background: $hover-color--dark;}
+    @include themify($themes) {
+      color: themed('text-secondary');
     }
+    &:hover {
+      p {
+        @include themify($themes) {
+          color: themed('text-primary');
+        }
+      }
+      
+      .slider::before {
+        @include themify($themes) {
+          background: themed('hover');
+        }
+      }
+    }
+
     p {
       transition: $anim-eio-200ms;
       margin-right: 1rem;
     }
+
     .slider::before {
       transition: $anim-eio-200ms;
     }
@@ -169,22 +240,27 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   section {
     width: 95%;
     max-width: 1200px;
-    // padding: 0 1.5rem;
     margin-bottom: 2.5rem;
+
     &#dashboard {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 1.5rem;
     }
+
     &#overview {
       h3 {
-        color: $text-secondary--dark;
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
+        @include themify($themes) {
+          color: themed('text-secondary');
+        }
       }
+
       .statistics {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -198,49 +274,67 @@ main {
   width: 100%;
   padding: 2rem 0;
   border-radius: 5px;
-  background-color: $card-background--dark;
   display: flex;
   flex-direction: column;
   // justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: background-color 200ms ease-in-out;
-  &:hover {
-    background-color: $hover-color--dark;
+  @include themify($themes) {
+    background-color: themed('card-bg');
   }
+  &:hover {
+    @include themify($themes) {
+      background-color: themed('hover');
+    }
+  }
+
   &-social {
     display: inline-flex;
     align-items: center;
+
     img {
       width: 1.2rem;
       margin-right: 0.5rem;
     }
+
     p {
-      color: $text-secondary--dark;
       font-weight: $bold-fontWeight;
       font-size: 0.8rem;
+      @include themify($themes) {
+        color: themed('text-secondary');
+      }
     }
   }
+
   &-numbers {
     padding: 1.25rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+
     p {
-      color: $text-secondary--dark;
       font-weight: $regular-fontWeight;
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.3rem;
+
+      @include themify($themes) {
+        color: themed('text-secondary');
+      }
+
       strong {
-        color: $text-primary--dark;
         font-weight: $bold-fontWeight;
         font-size: 3.5rem;
         text-transform: none;
         letter-spacing: normal;
+        @include themify($themes) {
+          color: themed('text-primary');
+        }
       }
     }
   }
+
   &-diff {
     display: flex;
     align-items: center;
@@ -250,12 +344,15 @@ main {
 .facebook {
   border-top: 4px solid $facebook;
 }
+
 .twitter {
   border-top: 4px solid $twitter;
 }
+
 .instagram {
   border-top: 4px solid #c4268c;
   position: relative;
+
   &::before {
     content: '';
     position: absolute;
@@ -266,6 +363,7 @@ main {
     border-radius: 10px;
   }
 }
+
 .youtube {
   border-top: 4px solid $youtube;
 }
@@ -273,33 +371,44 @@ main {
 .stat {
   padding: 1.5rem 1.75rem;
   border-radius: 5px;
-  background-color: $card-background--dark;
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     "title icon"
     "number diff";
-    gap: 1.5rem;
+  gap: 1.5rem;
   align-items: center;
   cursor: pointer;
   transition: background-color 200ms ease-in-out;
-  &:hover {
-    background-color: $hover-color--dark;
+
+  @include themify($themes) {
+    background-color: themed('card-bg');
   }
+  &:hover {
+    @include themify($themes) {
+      background-color: themed('hover');
+    }
+  }
+
   &-title {
-    color: $text-secondary--dark;
     font-size: 0.9rem;
     grid-area: title;
     justify-self: left;
+    @include themify($themes) {
+      color: themed('text-secondary');
+    }
   }
+
   &-icon {
     grid-area: icon;
     justify-self: right;
   }
+
   &-number {
     font-size: 2rem;
     grid-area: number;
     justify-self: left;
   }
+
   &-diff {
     grid-area: diff;
     justify-self: right;
@@ -310,15 +419,19 @@ main {
 .diff {
   display: flex;
   align-items: center;
+
   img {
     margin-right: 0.25rem;
-    &[src="images/icon-up.svg"] + p{
+
+    &[src="images/icon-up.svg"]+p {
       color: $lime-green;
     }
-    &[src="images/icon-down.svg"] + p{
+
+    &[src="images/icon-down.svg"]+p {
       color: $bright-red;
     }
   }
+
   p {
     font-weight: $bold-fontWeight;
     font-size: 0.75rem;
@@ -329,6 +442,7 @@ main {
   header {
     display: flex;
     justify-content: space-between;
+
     hgroup {
       border-bottom: none;
     }
